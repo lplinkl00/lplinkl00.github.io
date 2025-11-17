@@ -3,10 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/styling.css">
 </head>
 <body>
-    <h1> Welcome to my website</h1>
-    <p> This will turn into a portfolio website</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="nav-logo">Portfolio</h2>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Personal Information Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <div class="image-placeholder">
+                        <span>Your Photo</span>
+                    </div>
+                </div>
+                <h1 class="hero-title">Leo Paul Larkin</h1>
+                <p class="hero-subtitle">Data Analyst | GIS | Sustainability</p>
+                <div class="hero-info">
+                    <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">lplinkl00@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Location:</span>
+                        <span class="info-value">Kuala Lumpur, Malaysia</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">GitHub:</span>
+                        <a href="https://github.com/lplinkl00" class="info-link" target="_blank">github.com/lplinkl00</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">LinkedIn:</span>
+                        <a href="https://linkedin.com/in/lplinkl00" class="info-link" target="_blank">linkedin.com/in/yourprofile</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        Welcome to my portfolio! I'm a passionate developer with a love for creating 
+                        beautiful and functional web experiences. I enjoy working with modern technologies 
+                        and turning ideas into reality through code.
+                    </p>
+                    <p class="about-text">
+                        When I'm not coding, you can find me exploring new technologies, contributing to 
+                        open-source projects, or sharing knowledge with the developer community. I believe 
+                        in continuous learning and staying up-to-date with the latest trends in web development.
+                    </p>
+                    <div class="skills">
+                        <h3 class="skills-title">Skills</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projects will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-text">Feel free to reach out if you'd like to collaborate or have any questions!</p>
+                <div class="contact-info">
+                    <a href="mailto:lplinkl00@gmail.com" class="contact-link">Email Me</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Leo Paul Larkin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/func.js"></script>
 </body>
 </html>
