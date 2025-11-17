@@ -7,14 +7,23 @@
 
 :root {
     --primary-color: #41B97D;
+    --primary-color-dark: #283F23;
     --secondary-color: #E7F8BE;
+    --secondary-color-dark: #397234;
     --text-color: #FCC5F8;
+    --text-color-dark: #ACBD5E;
     --text-light: #B3F7FE;
+    --text-light-dark: #B78449;
     --bg-color: #454545;
+    --bg-color-dark: #0B0F08;
     --bg-light: #4CB572;
+    --bg-light-dark: #3F2617;
     --border-color: #e5e7eb;
+    --border-color-dark: #333333;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-dark: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg-dark: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 body {
