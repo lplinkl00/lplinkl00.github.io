@@ -3,21 +3,21 @@
 // Sample projects data - replace with your actual projects
 const projectsData = [
     {
-        title: "Project One",
-        description: "A brief description of your first project. Explain what it does, what technologies you used, and what problem it solves.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        demoLink: "https://example.com",
-        codeLink: "https://github.com/yourusername/project-one"
+        title: "Learning CARTO - Documented",
+        description: "Notes and Learnings from using CARTO's free trial to build maps and data visualizations",
+        technologies: ["CARTO", "SQL"],
+        demoLink: "N/A",
+        codeLink: "https://github.com/lplinkl00/project-one"
     },
     {
-        title: "Project Two",
+        title: "Mapping in Python",
         description: "Another project description. Highlight key features and your role in the development process.",
         technologies: ["JavaScript", "API", "Responsive Design"],
         demoLink: "https://example.com",
         codeLink: "https://github.com/yourusername/project-two"
     },
     {
-        title: "Project Three",
+        title: "IT Administrator - MyGreenlight",
         description: "Describe your third project here. Showcase different skills and technologies you've worked with.",
         technologies: ["HTML", "CSS", "JavaScript", "UI/UX"],
         demoLink: "https://example.com",
