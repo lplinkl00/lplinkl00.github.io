@@ -91,8 +91,12 @@ function initSmoothScrolling() {
 
 function toggleDarkMode() {
     const body = document.body;
-    body.classList.toggle('dark-mode');
-    body.classList.toggle('light-mode');
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    if (body.classList.contains('dark-mode')) {
+        darkModeToggle.textContent = 'Light Mode';
+    } else {
+        darkModeToggle.textContent = 'Dark Mode';
+    }
 }
 
 // Initialize when DOM is loaded
