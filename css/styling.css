@@ -415,19 +415,9 @@ body {
 
 /* dark n light mode */
 
-.dark-mode {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-.light-mode {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-}
-
 .dark-mode-toggle {
-    background-color: var(--bg-color);
-    color: white;
+    background-color: var(--primary-color-dark);
+    color: var(--text-color-dark);
     padding: 0.75rem 2rem;
     border-radius: 5px;
     text-decoration: none;
