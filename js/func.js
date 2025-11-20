@@ -28,12 +28,12 @@ const projectsData = [
 // Function to create project cards
 function createProjectCard(project) {
     const card = document.createElement('div');
-    card.className = 'project-card';
-    
-    const techTags = project.technologies.map(tech => 
+    card.className = 'project-card animate-on-scroll';
+
+    const techTags = project.technologies.map(tech =>
         `<span class="tech-tag">${tech}</span>`
     ).join('');
-    
+
     card.innerHTML = `
         <h3 class="project-title">${project.title}</h3>
         <p class="project-description">${project.description}</p>
@@ -45,39 +45,63 @@ function createProjectCard(project) {
             ${project.codeLink ? `<a href="${project.codeLink}" class="project-link" target="_blank">View Code</a>` : ''}
         </div>
     `;
-    
+
     return card;
 }
 
 // Function to render all projects
 function renderProjects() {
     const projectsGrid = document.getElementById('projectsGrid');
-    
+
     if (!projectsGrid) {
         console.error('Projects grid element not found');
         return;
     }
-    
+
     projectsData.forEach(project => {
         const projectCard = createProjectCard(project);
         projectsGrid.appendChild(projectCard);
     });
 }
 
+// Function to initialize scroll animations
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+    // Create Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: stop observing after animation triggers
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: '0px 0px -50px 0px' // Trigger slightly before element enters viewport
+    });
+
+    // Observe all animated elements
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
 // Smooth scrolling for navigation links
 function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             // Only handle internal links
             if (href.startsWith('#')) {
                 e.preventDefault();
                 const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
-                
+
                 if (targetElement) {
                     targetElement.scrollIntoView({
                         behavior: 'smooth',
@@ -91,15 +115,16 @@ function initSmoothScrolling() {
 
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     renderProjects();
     initSmoothScrolling();
-    
+    initScrollAnimations();
+
     // Add active state to navigation on scroll
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
-        
+
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -108,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
