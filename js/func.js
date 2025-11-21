@@ -7,7 +7,7 @@ const projectsData = [
         description: "Created and maintained the website & IT infrastructure for MyGreenlight. Also performed business development & marketing tasks",
         technologies: ["Google Workspace", "Webflow", "ESG"],
         demoLink: "https://mygreenlight.com.my",
-        codeLink: "https://github.com/lplinkl00/project-one"
+        codeLink: "N/A"
     },
     {
         title: "Earth Observation",
