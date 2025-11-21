@@ -15,13 +15,6 @@ const projectsData = [
         technologies: ["Python", "API", "CARTO", "SQL", "QGIS"],
         demoLink: "N/A",
         codeLink: "https://github.com/lplinkl00/earthobservation"
-    },
-    {
-        title: "Other Personal Projects",
-        description: "Describe your third project here. Showcase different skills and technologies you've worked with.",
-        technologies: ["HTML", "CSS", "JavaScript", "UI/UX"],
-        demoLink: "https://example.com",
-        codeLink: "https://github.com/yourusername/project-three"
     }
 ];
 
