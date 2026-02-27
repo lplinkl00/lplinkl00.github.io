@@ -442,3 +442,85 @@ body {
         padding: 2rem 1rem;
     }
 }
+
+/* Cookie Consent Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-light);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 2rem;
+    z-index: 9999;
+    transition: bottom 0.5s ease-in-out;
+    border-top: 1px solid var(--border-color);
+}
+
+.cookie-banner.show {
+    bottom: 0;
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.cookie-content p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin: 0;
+    flex: 1;
+    min-width: 250px;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cookie-btn {
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accept-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.accept-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.decline-btn {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--text-light);
+}
+
+.decline-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}

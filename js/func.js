@@ -105,11 +105,55 @@ function initSmoothScrolling() {
 }
 
 
+// Cookie Consent Logic
+function initCookieConsent() {
+    const banner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const declineBtn = document.getElementById('declineCookies');
+
+    if (!banner || !acceptBtn || !declineBtn) return;
+
+    // Check localStorage for consent
+    const consent = localStorage.getItem('cookieConsent');
+
+    if (!consent) {
+        // Show banner after a short delay
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 1000);
+    } else if (consent === 'accepted') {
+        // Update Google Analytics if accepted previously
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        }
+    }
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.classList.remove('show');
+
+        // Update Google Analytics consent
+        if (typeof gtag === 'function') {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        }
+    });
+
+    declineBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.classList.remove('show');
+    });
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
     renderProjects();
     initSmoothScrolling();
     initScrollAnimations();
+    initCookieConsent();
 
     // Add active state to navigation on scroll
     window.addEventListener('scroll', function () {
